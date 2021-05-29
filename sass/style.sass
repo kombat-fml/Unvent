@@ -1,0 +1,14 @@
+@function vw($value, $base: 1920)
+  @return $value / $base * 100vw
+
+*, *::before, *::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-size: vw(16)
+
+img
+  display: block
+  max-width: 100%
