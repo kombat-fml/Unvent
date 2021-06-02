@@ -96,6 +96,13 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #282728;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.header-logo:hover {
+  color: #fe6950;
 }
 
 .header-logo-image {
