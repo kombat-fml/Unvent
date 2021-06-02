@@ -37,9 +37,8 @@ a
 ul
   list-style-type: none
 .hero
-  background-image: url('../images/hero-bg.jpg')
+  background: url('../images/hero-bg.jpg') no-repeat center
   background-size: cover
-  background-repeat: no-repeat
   position: relative
   padding-bottom: vw(120)
 .container
@@ -142,8 +141,9 @@ ul
       margin: auto
       fill: #fff
       width: vw(20)
-      height: vw(20)
-
+      height: auto
+  &-burger
+    display: none
 .nav
   padding: vw(15) 0
   &-list
@@ -190,6 +190,7 @@ ul
     &-discount
       background-color: #fff
       padding: vw(2) vw(6)
+      border-radius: vw(5)
   &-man
     position: absolute
     bottom: 0
@@ -304,3 +305,258 @@ ul
     transform: rotate(30deg)
     position: absolute
     animation: blick 3.0s ease 0.5s infinite
+.no-scroll
+  overflow: hidden
+@media ( max-width: 992px )
+  body
+    font-size: 14px
+  .container
+    max-width: 95%
+    padding: 0 10px
+  .nav
+    position: fixed
+    left: 0
+    top: 0
+    width: 85%
+    height: 100%
+    background-color: #fff
+    transform: translateX(-100%)
+    transition: transform 0.3s ease
+    z-index: 20
+    display: flex
+    &-active
+      transform: translateX(0)
+      overflow-y: auto
+    &-list
+      margin: auto
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      padding: 25px 0
+    &-item
+      margin-bottom: 15px
+  .header
+    padding: 20px 0
+    &-logo
+      &-image
+        width: 120px
+        margin-right: 0
+      &-text
+        display: none
+    &-address
+      &-map
+        width: 50px
+        height: 50px
+        margin-right: 10px
+      &-location
+        max-width: 120px
+        line-height: normal
+    &-button
+      border-radius: 5px
+      min-height: 48px
+      width: 200px
+      font-size: 14px
+    &-contacts
+      &-phone
+        font-size: 16px
+        margin-bottom: 5px
+      &-icon
+        width: 14px
+    &-social
+      &-link
+        width: 36px
+        height: 36px
+        &:not(:last-child)
+          margin-right: 10px
+      &-icon
+        width: 16px
+    &-burger
+      background-color: transparent
+      border: 1px solid transparent
+      border-radius: 4px
+      width: 28px
+      height: 28px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-evenly
+      transition: border-color 0.2s ease
+      &:hover
+        border-color: #313d4b
+      span
+        width: 20px
+        height: 1px
+        background-color: #313d4b
+        transition: all 0.3s ease
+      &-active
+        span
+          width: 23px
+          &:nth-child(1)
+            transform-origin: left top
+            transform: translateX(2px) rotate(45deg) translateY(-2px)
+          &:nth-child(2)
+            opacity: 0
+          &:nth-child(3)
+            transform-origin: left bottom
+            transform: translateX(2px) rotate(-45deg) translateY(2px)
+  .hero
+    padding-bottom: 60px
+    &-content
+      padding-top: 40px
+      max-width: 580px
+    &-title
+      font-size: 32px
+      max-width: 450px
+      line-height: 38px
+      margin-bottom: 35px
+    &-row
+      flex-direction: column
+      align-items: flex-start
+      &-left
+        width: 340px
+        margin-bottom: 20px
+      &-right
+        width: 340px
+        position: relative
+        z-index: 6
+        padding: 0 20px
+        margin-bottom: 0
+    &-offer
+      max-width: 90%
+      font-size: 14px
+      line-height: normal
+      margin-bottom: 15px
+      &-discount
+        border-radius: 5px
+        padding: 2px 6px
+    &-man
+      right: 20px
+      width: 45%
+      max-height: 750px
+    &-button
+      font-size: 14px
+      line-height: normal
+      letter-spacing: 0.45px
+      border-radius: 5px
+      padding: 12px 30px
+      box-shadow: inset 0 -4px 0 #e63c3c
+      &:hover
+        box-shadow: inset 0 4px 0 #e63c3c, 0 12px 46px 8px rgba(254, 81, 40, 0.2)
+      &-icon
+        width: 28px
+        margin-right: 10px
+    &-slider
+      &-title
+        font-size: 18px
+        margin-bottom: 15px
+      &-button
+        width: 10px
+        margin-top: 0
+      &-container
+        max-width: 240px
+      &-slide
+        max-width: 70px
+        margin: 0 5px
+  .advantages
+    &-list
+      margin-bottom: 40px
+      position: relative
+      z-index: 6
+      justify-content: flex-start
+    &-item
+      flex-basis: 30%
+      padding-left: 15px
+      padding-top: 5px
+      &-years
+        flex-basis: 39%
+      &::before
+        width: 18px
+        height: 18px
+    &-number
+      font-size: 50px
+      line-height: 50px
+      margin-right: 5px
+    &-text
+      font-size: 14px
+  .button-blick
+    &::after
+      width: 25px
+      height: 500px
+      top: -80px
+@media ( max-width: 900px )
+  .header-address
+    display: none
+@media (max-width: 600px)
+  .header
+    flex-wrap: wrap
+    &-logo
+      margin-right: 50%
+    &-button
+      order: 3
+      min-height: 40px
+      font-size: 12px
+      width: auto
+      padding: 10px 20px
+    &-contacts
+      order: 4
+  .hero
+    &-content
+      padding-top: 30px
+    &-row
+      align-items: center
+      &-left
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+      &-right
+        width: 90%
+    &-button
+      max-width: 340px
+    &-offer
+      align-self: flex-start
+      max-width: 360px
+      margin-left: 0
+      font-size: 16px
+    &-man
+      position: static
+      width: 300px
+    &-slider
+      &-container
+        max-width: 80%
+      &-slide
+        max-width: 45%
+        margin: 0 2.5%
+  .advantages
+    &-list
+      flex-direction: column
+      margin-bottom: 25px
+    &-item
+      padding-left: 20px
+      padding-top: 10px
+      &:not(:last-child)
+        margin-bottom: 10px
+      &-years
+        max-width: 350px
+        padding-left: 18px
+        padding-top: 8px
+@media (max-width: 380px)
+  .header
+    &-logo
+      &-image
+        width: 100px
+    &-button
+      margin: 20px auto 15px
+    &-contacts
+      flex-basis: 100%
+      display: flex
+      flex-direction: column
+      align-items: center
+  .hero
+    &-content
+      padding-top: 20px
+    &-button
+      padding: 10px 15px
+      font-size: 13px
+      &-icon
+        width: 24px
