@@ -1,3 +1,3 @@
-# Unvent - тестовое задание
+# Unvent - тестовое задание на верстку в относительных единицах
 
-## [github-pages](https://kombat-fml.github.io/Unvent/)
+## [view github-pages](https://kombat-fml.github.io/Unvent/)
